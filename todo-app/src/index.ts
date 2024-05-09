@@ -12,7 +12,5 @@ let collection: TodoCollection = new TodoCollection("Ian", todos);
 console.clear();
 console.log(`${collection.userName}'s Todo List`);
 
-let newId: number = collection.addTodo("Go for run");
-let todoItem: TodoItem = collection.getTodoById(newId);
-todoItem.printDetails();
 // collection.addTodo(todoItem);
+collection.getTodoItems(true).forEach((item) => item.printDetails());
