@@ -5,11 +5,13 @@ const todoCollection_1 = require("./todoCollection");
 let todos = [
     new todoItem_1.TodoItem(1, "Buy Flowers"),
     new todoItem_1.TodoItem(2, "Get Shoes"),
-    new todoItem_1.TodoItem(3, "Collect Tickets"),
+    new todoItem_1.TodoItem(3, "Collect Tickets", true),
     new todoItem_1.TodoItem(4, "Call Joe", true),
 ];
 let collection = new todoCollection_1.TodoCollection("Ian", todos);
 console.clear();
-console.log(`${collection.userName}'s Todo List`);
+console.log(`${collection.userName}'s Todo List` +
+    `(${collection.getItemCounts().incomplete} items to do)`);
 // collection.addTodo(todoItem);
+// collection.removeComplete();
 collection.getTodoItems(true).forEach((item) => item.printDetails());
